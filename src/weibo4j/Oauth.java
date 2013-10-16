@@ -95,8 +95,7 @@ public class Oauth extends Weibo{
 				+ WeiboConfig.getValue("client_ID").trim() + "&redirect_uri="
 				+ WeiboConfig.getValue("redirect_URI").trim()
 				+ "&response_type=" + response_type
-				+ "&display=wap1.2";
-				
+				+ "&state="+state;
 	}
 	public String authorize(String response_type,String state,String scope) throws WeiboException {
 		return WeiboConfig.getValue("authorizeURL").trim() + "?client_id="

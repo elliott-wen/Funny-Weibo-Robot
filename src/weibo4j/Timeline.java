@@ -766,28 +766,6 @@ public class Timeline extends Weibo{
 				new PostParameter[] { new PostParameter("status", status)},
 				item));
 	}
-	
-	/**
-	 * 上传HTTP图片并发布一条新微博
-	 * 
-	 * @param status
-	 *            要发布的微博文本内容，必须做URLencode，内容不超过140个汉字
-	 * @param pic
-	 *            要上传的图片的Http地址
-	 * @return Status
-	 * @throws WeiboException
-	 *             when Weibo service or network is unavailable
-	 * @version weibo4j-V2 1.0.0
-	 * @see <a
-	 *      href="http://open.weibo.com/wiki/2/statuses/upload">statuses/upload</a>
-	 * @since JDK 1.5
-	 */
-	public Status UploadStatus(String status, String ImageUrl)
-			throws WeiboException {
-		return new Status(client.post(WeiboConfig.getValue("baseURL")
-				+ "statuses/upload_url_text.json",
-				new PostParameter[] { new PostParameter("status", status),new PostParameter("url",ImageUrl) }));
-	}
 
 	/**
 	 * 上传图片并发布一条新微博
